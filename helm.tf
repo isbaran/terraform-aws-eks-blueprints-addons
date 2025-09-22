@@ -49,25 +49,21 @@ resource "helm_release" "this" {
     }
   }
 
-  dynamic "set" {
-    for_each = try(each.value.set, [])
-
-    content {
-      name  = set.value.name
-      value = set.value.value
-      type  = try(set.value.type, null)
+  set = [
+    for set_item in try(each.value.set, []) : {
+      name  = set_item.name
+      value = set_item.value
+      type  = try(set_item.type, null)
     }
-  }
+  ]
 
-  dynamic "set_sensitive" {
-    for_each = try(each.value.set_sensitive, [])
-
-    content {
-      name  = set_sensitive.value.name
-      value = set_sensitive.value.value
-      type  = try(set_sensitive.value.type, null)
+  set_sensitive = [
+    for set_item in try(each.value.set_sensitive, []) : {
+      name  = set_item.name
+      value = set_item.value
+      type  = try(set_item.type, null)
     }
-  }
+  ]
 
   depends_on = [
     # Wait for EBS CSI, etc. to be installed first

@@ -57,6 +57,12 @@ module "addons" {
             enabled: true
         EOT
       ]
+      set = [
+        {
+          name  = "service.type"
+          value = "ClusterIP"
+        }
+      ]
     }
     gpu-operator = {
       description      = "A Helm chart for NVIDIA GPU operator"
@@ -70,6 +76,12 @@ module "addons" {
           operator:
             defaultRuntime: containerd
         EOT
+      ]
+      set_sensitive = [
+        {
+          name  = "api.key"
+          value = "super-secret-key"
+        }
       ]
     }
   }
