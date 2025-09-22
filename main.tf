@@ -97,8 +97,7 @@ locals {
 ################################################################################
 
 module "argo_rollouts" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_argo_rollouts
 
@@ -153,8 +152,7 @@ module "argo_rollouts" {
 ################################################################################
 
 module "argo_workflows" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_argo_workflows
 
@@ -209,8 +207,7 @@ module "argo_workflows" {
 ################################################################################
 
 module "argocd" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_argocd
 
@@ -265,8 +262,7 @@ module "argocd" {
 ################################################################################
 
 module "argo_events" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_argo_events
 
@@ -326,8 +322,7 @@ locals {
 }
 
 module "aws_cloudwatch_metrics" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_cloudwatch_metrics
 
@@ -495,8 +490,7 @@ data "aws_iam_policy_document" "aws_efs_csi_driver" {
 }
 
 module "aws_efs_csi_driver" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_efs_csi_driver
 
@@ -672,8 +666,7 @@ data "aws_iam_policy_document" "aws_for_fluentbit" {
 }
 
 module "aws_for_fluentbit" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_for_fluentbit
 
@@ -1068,8 +1061,7 @@ data "aws_iam_policy_document" "aws_fsx_csi_driver" {
 }
 
 module "aws_fsx_csi_driver" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_fsx_csi_driver
 
@@ -1439,8 +1431,7 @@ data "aws_iam_policy_document" "aws_load_balancer_controller" {
 }
 
 module "aws_load_balancer_controller" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_load_balancer_controller
 
@@ -1660,8 +1651,7 @@ data "aws_iam_policy_document" "aws_node_termination_handler" {
 }
 
 module "aws_node_termination_handler" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_node_termination_handler
 
@@ -1784,8 +1774,7 @@ data "aws_iam_policy_document" "aws_privateca_issuer" {
 }
 
 module "aws_privateca_issuer" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_privateca_issuer
 
@@ -1902,8 +1891,7 @@ data "aws_iam_policy_document" "cert_manager" {
 }
 
 module "cert_manager" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_cert_manager
 
@@ -2059,8 +2047,7 @@ data "aws_iam_policy_document" "cluster_autoscaler" {
 }
 
 module "cluster_autoscaler" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_cluster_autoscaler
 
@@ -2160,8 +2147,7 @@ module "cluster_autoscaler" {
 ################################################################################
 
 module "cluster_proportional_autoscaler" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_cluster_proportional_autoscaler
 
@@ -2285,8 +2271,7 @@ data "aws_iam_policy_document" "external_dns" {
 }
 
 module "external_dns" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_external_dns
 
@@ -2438,8 +2423,7 @@ data "aws_iam_policy_document" "external_secrets" {
 }
 
 module "external_secrets" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_external_secrets
 
@@ -2688,8 +2672,7 @@ resource "kubernetes_config_map_v1" "aws_logging" {
 ################################################################################
 
 module "gatekeeper" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_gatekeeper
 
@@ -2744,8 +2727,7 @@ module "gatekeeper" {
 ################################################################################
 
 module "ingress_nginx" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_ingress_nginx
 
@@ -3068,8 +3050,7 @@ resource "aws_iam_instance_profile" "karpenter" {
 }
 
 module "karpenter" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_karpenter
 
@@ -3163,8 +3144,7 @@ module "karpenter" {
 # kubectl delete crd thanosrulers.monitoring.coreos.com
 
 module "kube_prometheus_stack" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_kube_prometheus_stack
 
@@ -3219,8 +3199,7 @@ module "kube_prometheus_stack" {
 ################################################################################
 
 module "metrics_server" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_metrics_server
 
@@ -3275,8 +3254,7 @@ module "metrics_server" {
 ################################################################################
 
 module "secrets_store_csi_driver" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_secrets_store_csi_driver
 
@@ -3331,8 +3309,7 @@ module "secrets_store_csi_driver" {
 ################################################################################
 
 module "secrets_store_csi_driver_provider_aws" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_secrets_store_csi_driver_provider_aws
 
@@ -3444,8 +3421,7 @@ data "aws_iam_policy_document" "velero" {
 }
 
 module "velero" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_velero
 
@@ -3566,8 +3542,7 @@ module "velero" {
 ################################################################################
 
 module "vpa" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_vpa
 
@@ -3659,8 +3634,7 @@ data "aws_iam_policy_document" "aws_gateway_api_controller" {
 }
 
 module "aws_gateway_api_controller" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_aws_gateway_api_controller
 
@@ -3756,8 +3730,7 @@ locals {
 }
 
 module "bottlerocket_shadow" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "~> 1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_bottlerocket_update_operator
 
@@ -3808,8 +3781,7 @@ module "bottlerocket_shadow" {
 }
 
 module "bottlerocket_update_operator" {
-  source  = "isbaran/eks-blueprints-addon/aws"
-  version = "~> 1.1.1"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=6a8eea4"
 
   create = var.enable_bottlerocket_update_operator
 

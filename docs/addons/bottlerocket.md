@@ -78,8 +78,7 @@ spec:
 
 ```hcl
 module "eks_blueprints_addons" {
-  source  = "isbaran/eks-blueprints-addons/aws"
-  version = "~> 1.13"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=6a8eea4"
 
   cluster_name      = module.eks.cluster_name
   cluster_endpoint  = module.eks.cluster_endpoint

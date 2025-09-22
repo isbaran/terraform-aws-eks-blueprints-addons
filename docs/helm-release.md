@@ -20,8 +20,7 @@ E.g.
 
 ```hcl
 module "addons" {
-  source  = "isbaran/eks-blueprints-addons/aws"
-  version = "~> 1.0"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=6a8eea4"
 
   cluster_name      = "<cluster_name>"
   cluster_endpoint  = "<cluster_endpoint>"

@@ -6,8 +6,7 @@ Terraform module to deploy Kubernetes addons on Amazon EKS clusters.
 
 ```hcl
 module "eks_blueprints_addons" {
-  source = "isbaran/eks-blueprints-addons/aws"
-  version = "~> 1.0" #ensure to update this to the latest/desired version
+  source = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=6a8eea4"
 
   cluster_name      = module.eks.cluster_name
   cluster_endpoint  = module.eks.cluster_endpoint
