@@ -20,7 +20,7 @@ E.g.
 
 ```hcl
 module "addons" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=6a8eea4"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=bdad780"
 
   cluster_name      = "<cluster_name>"
   cluster_endpoint  = "<cluster_endpoint>"

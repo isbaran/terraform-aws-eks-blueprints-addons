@@ -23,7 +23,7 @@ The Amazon EKS add-ons are provisioned via a generic interface behind the `eks_a
 
 ```hcl
 module "eks_blueprints_addons" {
-  source = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=6a8eea4"
+  source = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=bdad780"
 
   # ... truncated for brevity
 
@@ -55,7 +55,7 @@ module "eks_blueprints_addons" {
 
 ```hcl
 module "eks_blueprints_addons" {
-  source = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=6a8eea4"
+  source = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=bdad780"
 
   # ... truncated for brevity
 
@@ -251,7 +251,7 @@ You can supply the configuration values to the add-on by passing a map of the va
 
 ```hcl
 module "eks_blueprints_addons" {
-  source = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=6a8eea4"
+  source = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addons.git?ref=bdad780"
 
   # ... truncated for brevity
 
