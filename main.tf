@@ -97,7 +97,7 @@ locals {
 ################################################################################
 
 module "argo_rollouts" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_argo_rollouts
 
@@ -152,7 +152,7 @@ module "argo_rollouts" {
 ################################################################################
 
 module "argo_workflows" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_argo_workflows
 
@@ -207,7 +207,7 @@ module "argo_workflows" {
 ################################################################################
 
 module "argocd" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_argocd
 
@@ -262,7 +262,7 @@ module "argocd" {
 ################################################################################
 
 module "argo_events" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_argo_events
 
@@ -322,7 +322,7 @@ locals {
 }
 
 module "aws_cloudwatch_metrics" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_cloudwatch_metrics
 
@@ -379,7 +379,7 @@ module "aws_cloudwatch_metrics" {
     ],
     try(var.aws_cloudwatch_metrics.set, [])
   )
-  set_sensitive = try(var.aws_cloudwatch_metrics.set_sensitive, [])
+  set_sensitive = try(var.aws_cloudwatch_metrics.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -490,7 +490,7 @@ data "aws_iam_policy_document" "aws_efs_csi_driver" {
 }
 
 module "aws_efs_csi_driver" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_efs_csi_driver
 
@@ -545,7 +545,7 @@ module "aws_efs_csi_driver" {
     }],
     try(var.aws_efs_csi_driver.set, [])
   )
-  set_sensitive = try(var.aws_efs_csi_driver.set_sensitive, [])
+  set_sensitive = try(var.aws_efs_csi_driver.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names = [
@@ -666,7 +666,7 @@ data "aws_iam_policy_document" "aws_for_fluentbit" {
 }
 
 module "aws_for_fluentbit" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_for_fluentbit
 
@@ -737,7 +737,7 @@ module "aws_for_fluentbit" {
     }],
     try(var.aws_for_fluentbit.set, [])
   )
-  set_sensitive = try(var.aws_for_fluentbit.set_sensitive, [])
+  set_sensitive = try(var.aws_for_fluentbit.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names = [
@@ -1061,7 +1061,7 @@ data "aws_iam_policy_document" "aws_fsx_csi_driver" {
 }
 
 module "aws_fsx_csi_driver" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_fsx_csi_driver
 
@@ -1116,7 +1116,7 @@ module "aws_fsx_csi_driver" {
     }],
     try(var.aws_fsx_csi_driver.set, [])
   )
-  set_sensitive = try(var.aws_fsx_csi_driver.set_sensitive, [])
+  set_sensitive = try(var.aws_fsx_csi_driver.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names = [
@@ -1431,7 +1431,7 @@ data "aws_iam_policy_document" "aws_load_balancer_controller" {
 }
 
 module "aws_load_balancer_controller" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_load_balancer_controller
 
@@ -1486,7 +1486,7 @@ module "aws_load_balancer_controller" {
     }],
     try(var.aws_load_balancer_controller.set, [])
   )
-  set_sensitive = try(var.aws_load_balancer_controller.set_sensitive, [])
+  set_sensitive = try(var.aws_load_balancer_controller.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   create_role                   = try(var.aws_load_balancer_controller.create_role, true)
@@ -1651,7 +1651,7 @@ data "aws_iam_policy_document" "aws_node_termination_handler" {
 }
 
 module "aws_node_termination_handler" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_node_termination_handler
 
@@ -1715,7 +1715,7 @@ module "aws_node_termination_handler" {
     ],
     try(var.aws_node_termination_handler.set, [])
   )
-  set_sensitive = try(var.aws_node_termination_handler.set_sensitive, [])
+  set_sensitive = try(var.aws_node_termination_handler.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -1774,7 +1774,7 @@ data "aws_iam_policy_document" "aws_privateca_issuer" {
 }
 
 module "aws_privateca_issuer" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_privateca_issuer
 
@@ -1825,7 +1825,7 @@ module "aws_privateca_issuer" {
     }],
     try(var.aws_privateca_issuer.set, [])
   )
-  set_sensitive = try(var.aws_privateca_issuer.set_sensitive, [])
+  set_sensitive = try(var.aws_privateca_issuer.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -1891,7 +1891,7 @@ data "aws_iam_policy_document" "cert_manager" {
 }
 
 module "cert_manager" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_cert_manager
 
@@ -1947,7 +1947,7 @@ module "cert_manager" {
     ],
     try(var.cert_manager.set, [])
   )
-  set_sensitive = try(var.cert_manager.set_sensitive, [])
+  set_sensitive = try(var.cert_manager.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -2047,7 +2047,7 @@ data "aws_iam_policy_document" "cluster_autoscaler" {
 }
 
 module "cluster_autoscaler" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_cluster_autoscaler
 
@@ -2112,7 +2112,7 @@ module "cluster_autoscaler" {
     ],
     try(var.cluster_autoscaler.set, [])
   )
-  set_sensitive = try(var.cluster_autoscaler.set_sensitive, [])
+  set_sensitive = try(var.cluster_autoscaler.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["rbac.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -2147,7 +2147,7 @@ module "cluster_autoscaler" {
 ################################################################################
 
 module "cluster_proportional_autoscaler" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_cluster_proportional_autoscaler
 
@@ -2271,7 +2271,7 @@ data "aws_iam_policy_document" "external_dns" {
 }
 
 module "external_dns" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_external_dns
 
@@ -2322,7 +2322,7 @@ module "external_dns" {
     }],
     try(var.external_dns.set, [])
   )
-  set_sensitive = try(var.external_dns.set_sensitive, [])
+  set_sensitive = try(var.external_dns.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -2423,7 +2423,7 @@ data "aws_iam_policy_document" "external_secrets" {
 }
 
 module "external_secrets" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_external_secrets
 
@@ -2478,7 +2478,7 @@ module "external_secrets" {
     }],
     try(var.external_secrets.set, [])
   )
-  set_sensitive = try(var.external_secrets.set_sensitive, [])
+  set_sensitive = try(var.external_secrets.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -2672,7 +2672,7 @@ resource "kubernetes_config_map_v1" "aws_logging" {
 ################################################################################
 
 module "gatekeeper" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_gatekeeper
 
@@ -2727,7 +2727,7 @@ module "gatekeeper" {
 ################################################################################
 
 module "ingress_nginx" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_ingress_nginx
 
@@ -3050,7 +3050,7 @@ resource "aws_iam_instance_profile" "karpenter" {
 }
 
 module "karpenter" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_karpenter
 
@@ -3098,7 +3098,7 @@ module "karpenter" {
     [for s in local.karpenter_set : s if s.value != null],
     try(var.karpenter.set, [])
   )
-  set_sensitive = try(var.karpenter.set_sensitive, [])
+  set_sensitive = try(var.karpenter.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -3144,7 +3144,7 @@ module "karpenter" {
 # kubectl delete crd thanosrulers.monitoring.coreos.com
 
 module "kube_prometheus_stack" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_kube_prometheus_stack
 
@@ -3199,7 +3199,7 @@ module "kube_prometheus_stack" {
 ################################################################################
 
 module "metrics_server" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_metrics_server
 
@@ -3254,7 +3254,7 @@ module "metrics_server" {
 ################################################################################
 
 module "secrets_store_csi_driver" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_secrets_store_csi_driver
 
@@ -3309,7 +3309,7 @@ module "secrets_store_csi_driver" {
 ################################################################################
 
 module "secrets_store_csi_driver_provider_aws" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_secrets_store_csi_driver_provider_aws
 
@@ -3421,7 +3421,7 @@ data "aws_iam_policy_document" "velero" {
 }
 
 module "velero" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_velero
 
@@ -3507,7 +3507,7 @@ module "velero" {
     }],
     try(var.velero.set, [])
   )
-  set_sensitive = try(var.velero.set_sensitive, [])
+  set_sensitive = try(var.velero.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.server.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -3542,7 +3542,7 @@ module "velero" {
 ################################################################################
 
 module "vpa" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_vpa
 
@@ -3594,7 +3594,7 @@ module "vpa" {
     }],
     try(var.vpa.set, [])
   )
-  set_sensitive = try(var.vpa.set_sensitive, [])
+  set_sensitive = try(var.vpa.set_sensitive, null)
 
   tags = var.tags
 }
@@ -3634,7 +3634,7 @@ data "aws_iam_policy_document" "aws_gateway_api_controller" {
 }
 
 module "aws_gateway_api_controller" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_aws_gateway_api_controller
 
@@ -3691,7 +3691,7 @@ module "aws_gateway_api_controller" {
     }],
     try(var.aws_gateway_api_controller.set, [])
   )
-  set_sensitive = try(var.aws_gateway_api_controller.set_sensitive, [])
+  set_sensitive = try(var.aws_gateway_api_controller.set_sensitive, null)
 
   # IAM role for service account (IRSA)
   set_irsa_names                = ["serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"]
@@ -3730,7 +3730,7 @@ locals {
 }
 
 module "bottlerocket_shadow" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_bottlerocket_update_operator
 
@@ -3781,7 +3781,7 @@ module "bottlerocket_shadow" {
 }
 
 module "bottlerocket_update_operator" {
-  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=bdad780"
+  source  = "git::https://github.com/isbaran/terraform-aws-eks-blueprints-addon.git?ref=639cdf9"
 
   create = var.enable_bottlerocket_update_operator
 
