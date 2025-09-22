@@ -6,7 +6,7 @@ Terraform module to deploy Kubernetes addons on Amazon EKS clusters.
 
 ```hcl
 module "eks_blueprints_addons" {
-  source = "aws-ia/eks-blueprints-addons/aws"
+  source = "isbaran/eks-blueprints-addons/aws"
   version = "~> 1.0" #ensure to update this to the latest/desired version
 
   cluster_name      = module.eks.cluster_name
@@ -58,9 +58,9 @@ module "eks" {
 > [!IMPORTANT]
 > EKS Blueprints for Terraform is maintained by AWS Solution Architects. It is not part of an AWS
 > service and support is provided as a best-effort by the EKS Blueprints community. To provide feedback,
-> please use the [issues templates](https://github.com/aws-ia/terraform-aws-eks-blueprints-addons/issues)
+> please use the [issues templates](https://github.com/isbaran/terraform-aws-eks-blueprints-addons/issues)
 > provided. If you are interested in contributing to EKS Blueprints, see the
-> [Contribution guide](https://github.com/aws-ia/terraform-aws-eks-blueprints-addons/blob/main/.github/CONTRIBUTING.md).
+> [Contribution guide](https://github.com/isbaran/terraform-aws-eks-blueprints-addons/blob/main/.github/CONTRIBUTING.md).
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -88,36 +88,36 @@ module "eks" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_argo_events"></a> [argo\_events](#module\_argo\_events) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_argo_rollouts"></a> [argo\_rollouts](#module\_argo\_rollouts) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_argo_workflows"></a> [argo\_workflows](#module\_argo\_workflows) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_argocd"></a> [argocd](#module\_argocd) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_aws_cloudwatch_metrics"></a> [aws\_cloudwatch\_metrics](#module\_aws\_cloudwatch\_metrics) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_aws_efs_csi_driver"></a> [aws\_efs\_csi\_driver](#module\_aws\_efs\_csi\_driver) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_aws_for_fluentbit"></a> [aws\_for\_fluentbit](#module\_aws\_for\_fluentbit) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_aws_fsx_csi_driver"></a> [aws\_fsx\_csi\_driver](#module\_aws\_fsx\_csi\_driver) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_aws_gateway_api_controller"></a> [aws\_gateway\_api\_controller](#module\_aws\_gateway\_api\_controller) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_aws_load_balancer_controller"></a> [aws\_load\_balancer\_controller](#module\_aws\_load\_balancer\_controller) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_aws_node_termination_handler"></a> [aws\_node\_termination\_handler](#module\_aws\_node\_termination\_handler) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_argo_events"></a> [argo\_events](#module\_argo\_events) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_argo_rollouts"></a> [argo\_rollouts](#module\_argo\_rollouts) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_argo_workflows"></a> [argo\_workflows](#module\_argo\_workflows) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_argocd"></a> [argocd](#module\_argocd) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_cloudwatch_metrics"></a> [aws\_cloudwatch\_metrics](#module\_aws\_cloudwatch\_metrics) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_efs_csi_driver"></a> [aws\_efs\_csi\_driver](#module\_aws\_efs\_csi\_driver) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_for_fluentbit"></a> [aws\_for\_fluentbit](#module\_aws\_for\_fluentbit) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_fsx_csi_driver"></a> [aws\_fsx\_csi\_driver](#module\_aws\_fsx\_csi\_driver) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_gateway_api_controller"></a> [aws\_gateway\_api\_controller](#module\_aws\_gateway\_api\_controller) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_load_balancer_controller"></a> [aws\_load\_balancer\_controller](#module\_aws\_load\_balancer\_controller) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_node_termination_handler"></a> [aws\_node\_termination\_handler](#module\_aws\_node\_termination\_handler) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
 | <a name="module_aws_node_termination_handler_sqs"></a> [aws\_node\_termination\_handler\_sqs](#module\_aws\_node\_termination\_handler\_sqs) | terraform-aws-modules/sqs/aws | 4.0.1 |
-| <a name="module_aws_privateca_issuer"></a> [aws\_privateca\_issuer](#module\_aws\_privateca\_issuer) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_bottlerocket_shadow"></a> [bottlerocket\_shadow](#module\_bottlerocket\_shadow) | aws-ia/eks-blueprints-addon/aws | ~> 1.1.1 |
-| <a name="module_bottlerocket_update_operator"></a> [bottlerocket\_update\_operator](#module\_bottlerocket\_update\_operator) | aws-ia/eks-blueprints-addon/aws | ~> 1.1.1 |
-| <a name="module_cert_manager"></a> [cert\_manager](#module\_cert\_manager) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_cluster_autoscaler"></a> [cluster\_autoscaler](#module\_cluster\_autoscaler) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_cluster_proportional_autoscaler"></a> [cluster\_proportional\_autoscaler](#module\_cluster\_proportional\_autoscaler) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_external_dns"></a> [external\_dns](#module\_external\_dns) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_external_secrets"></a> [external\_secrets](#module\_external\_secrets) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_gatekeeper"></a> [gatekeeper](#module\_gatekeeper) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_ingress_nginx"></a> [ingress\_nginx](#module\_ingress\_nginx) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_karpenter"></a> [karpenter](#module\_karpenter) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_aws_privateca_issuer"></a> [aws\_privateca\_issuer](#module\_aws\_privateca\_issuer) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_bottlerocket_shadow"></a> [bottlerocket\_shadow](#module\_bottlerocket\_shadow) | isbaran/eks-blueprints-addon/aws | ~> 1.1.1 |
+| <a name="module_bottlerocket_update_operator"></a> [bottlerocket\_update\_operator](#module\_bottlerocket\_update\_operator) | isbaran/eks-blueprints-addon/aws | ~> 1.1.1 |
+| <a name="module_cert_manager"></a> [cert\_manager](#module\_cert\_manager) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_cluster_autoscaler"></a> [cluster\_autoscaler](#module\_cluster\_autoscaler) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_cluster_proportional_autoscaler"></a> [cluster\_proportional\_autoscaler](#module\_cluster\_proportional\_autoscaler) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_external_dns"></a> [external\_dns](#module\_external\_dns) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_external_secrets"></a> [external\_secrets](#module\_external\_secrets) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_gatekeeper"></a> [gatekeeper](#module\_gatekeeper) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_ingress_nginx"></a> [ingress\_nginx](#module\_ingress\_nginx) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_karpenter"></a> [karpenter](#module\_karpenter) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
 | <a name="module_karpenter_sqs"></a> [karpenter\_sqs](#module\_karpenter\_sqs) | terraform-aws-modules/sqs/aws | 4.0.1 |
-| <a name="module_kube_prometheus_stack"></a> [kube\_prometheus\_stack](#module\_kube\_prometheus\_stack) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_metrics_server"></a> [metrics\_server](#module\_metrics\_server) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_secrets_store_csi_driver"></a> [secrets\_store\_csi\_driver](#module\_secrets\_store\_csi\_driver) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_secrets_store_csi_driver_provider_aws"></a> [secrets\_store\_csi\_driver\_provider\_aws](#module\_secrets\_store\_csi\_driver\_provider\_aws) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_velero"></a> [velero](#module\_velero) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
-| <a name="module_vpa"></a> [vpa](#module\_vpa) | aws-ia/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_kube_prometheus_stack"></a> [kube\_prometheus\_stack](#module\_kube\_prometheus\_stack) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_metrics_server"></a> [metrics\_server](#module\_metrics\_server) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_secrets_store_csi_driver"></a> [secrets\_store\_csi\_driver](#module\_secrets\_store\_csi\_driver) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_secrets_store_csi_driver_provider_aws"></a> [secrets\_store\_csi\_driver\_provider\_aws](#module\_secrets\_store\_csi\_driver\_provider\_aws) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_velero"></a> [velero](#module\_velero) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
+| <a name="module_vpa"></a> [vpa](#module\_vpa) | isbaran/eks-blueprints-addon/aws | 1.1.1 |
 
 ## Resources
 

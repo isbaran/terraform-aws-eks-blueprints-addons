@@ -40,14 +40,12 @@ resource "helm_release" "this" {
   replace                    = try(each.value.replace, null)
   lint                       = try(each.value.lint, null)
 
-  dynamic "postrender" {
-    for_each = try([each.value.postrender], [])
-
-    content {
-      binary_path = postrender.value.binary_path
-      args        = try(postrender.value.args, null)
+  postrender = [
+    for postrender_item in try([each.value.postrender], []) : {
+      binary_path = postrender_item.binary_path
+      args        = try(postrender_item.args, null)
     }
-  }
+  ]
 
   set = [
     for set_item in try(each.value.set, []) : {

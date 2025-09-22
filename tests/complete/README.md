@@ -72,4 +72,4 @@ No inputs.
 | <a name="output_configure_kubectl"></a> [configure\_kubectl](#output\_configure\_kubectl) | Configure kubectl: make sure you're logged in with the correct AWS profile and run the following command to update your kubeconfig |
 <!-- END_TF_DOCS -->
 
-Apache-2.0 Licensed. See [LICENSE](https://github.com/aws-ia/terraform-aws-eks-blueprints-addons/blob/main/LICENSE)
+Apache-2.0 Licensed. See [LICENSE](https://github.com/isbaran/terraform-aws-eks-blueprints-addons/blob/main/LICENSE)
